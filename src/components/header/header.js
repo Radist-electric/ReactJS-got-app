@@ -30,19 +30,19 @@ const Header = () => {
     return (
         <HeaderBlock>
             <HeaderTitle>
-                <a href="#">
+                <a href="ya.ru">
                 Game of Thrones DB
                 </a>
             </HeaderTitle>
             <HeaderLinks>
                 <li>
-                    <a href="#">Characters</a>
+                    <a href="ya.ru">Characters</a>
                 </li>
                 <li>
-                    <a href="#">Houses</a>
+                    <a href="ya.ru">Houses</a>
                 </li>
                 <li>
-                    <a href="#">Books</a>   
+                    <a href="ya.ru">Books</a>   
                 </li>
             </HeaderLinks>
         </HeaderBlock>

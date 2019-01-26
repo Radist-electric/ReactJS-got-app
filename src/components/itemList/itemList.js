@@ -1,20 +1,21 @@
 import React, {Component} from 'react';
-import './itemList.css';
+import { ListGroup, ListGroupItem } from 'reactstrap';
+
 export default class ItemList extends Component {
 
     render() {
         return (
-            <ul className="item-list list-group">
-                <li className="list-group-item">
+            <ListGroup>
+                <ListGroupItem>
                     John Snow
-                </li>
-                <li className="list-group-item">
+                </ListGroupItem>
+                <ListGroupItem>
                     Brandon Stark
-                </li>
-                <li className="list-group-item">
+                </ListGroupItem>
+                <ListGroupItem>
                     Geremy
-                </li>
-            </ul>
+                </ListGroupItem>
+            </ListGroup>
         );
     }
 }
