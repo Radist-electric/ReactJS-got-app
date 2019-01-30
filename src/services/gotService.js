@@ -39,6 +39,7 @@ export default class GotService {
 
     _transformCharacter(char) {
       const url = char.url.match(/\d/g),
+      //Вместо пустого поля - показывайте пользователю, что таких данных нет. Это я уже сделал ранее.
             name = (char.name.length === 0) ? 'Unnamed' : char.name,
             gender = (char.gender.length === 0) ? 'Hermaphrodite' : char.gender,
             born = (char.born.length === 0) ? 'Never born' : char.born,
