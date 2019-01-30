@@ -14,17 +14,26 @@ const RandomBlock = styled.div`
     }
 `
 export default class RandomChar extends Component {
-    constructor() {
-        super();
-        this.updateChar();
-    }
     gotService = new GotService();
     state = {
         char: {},
         loading: true,
-        error: false
+        error: false,
+        fatalError: false
     }
     
+    componentDidMount() {
+        this.updateChar();
+        this.timerId = setInterval(this.updateChar, 5000);
+    }
+    componentWillUnmount() {
+        clearInterval(this.timerId);
+    }
+    componentDidCatch() {
+        this.setState({
+            fatalError: true
+        })
+    }
     onCharLoaded = (char) => {
         this.setState({
             char,
@@ -37,21 +46,25 @@ export default class RandomChar extends Component {
             error: true,
             loading: false
         });
+        clearInterval(this.timerId);
     }
 
-    updateChar() {
-        const id = 150000;
-        // const id = Math.floor(Math.random()*140+25);
+    updateChar = () => {
+        // const id = 150000;
+        const id = Math.floor(Math.random()*140+25);
         this.gotService.getCharacter(id)
             .then(this.onCharLoaded)
             .catch(this.onError);
     }
 
     render() {
+        if(this.state.fatalError) {
+            return <ErrorMessage typeError="fatal"/>
+        }
         const { char, loading, error } = this.state;
         const content = !(loading || error) ? <View char={char}/> : null;
         const spinner = loading ? <Spinner/> : null;
-        const errorMessage = error ? <ErrorMessage/> : null;
+        const errorMessage = error ? <ErrorMessage typeError="404"/> : null;
 
         return (
             <RandomBlock className="rounded">

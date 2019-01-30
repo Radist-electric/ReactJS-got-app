@@ -11,7 +11,7 @@ export default class GotService {
     };
 
     async getAllCharacters() {
-      const res = await this.getResource(`/characters?page=1&pageSize=10`);
+      const res = await this.getResource(`/characters?page=10&pageSize=10`);
       return res.map(this._transformCharacter);
     }
     async getCharacter(id) {
@@ -38,12 +38,14 @@ export default class GotService {
     }
 
     _transformCharacter(char) {
-      const name = (char.name.length === 0) ? 'Unnamed' : char.name,
+      const url = char.url.match(/\d/g),
+            name = (char.name.length === 0) ? 'Unnamed' : char.name,
             gender = (char.gender.length === 0) ? 'Hermaphrodite' : char.gender,
             born = (char.born.length === 0) ? 'Never born' : char.born,
             died = (char.died.length === 0) ? 'Never died' : char.died,
             culture = (char.culture.length === 0) ? 'Uncultural' : char.culture;
       return {
+        url: url,
         name: name,
         gender: gender,
         born: born,

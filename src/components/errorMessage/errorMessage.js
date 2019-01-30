@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 // import './errorMessage.css';
 import img404 from './error404.png';
+import imgFatal from './errorFatal.jpg';
 
 const ErrorBlock = styled.div`
     height: 100%;
@@ -24,13 +25,31 @@ const ErrorBlock = styled.div`
 `
 
 
-const ErrorMessage = () => {
+const ErrorMessage = ({typeError}) => {
+    const showErrorFatal = (typeError ==="fatal") ? <ErrorFatal/> : null;
+    const showError404 = (typeError ==="404") ? <Error404/> : null;
     return (
         <ErrorBlock>
-            {/* <img src={process.env.PUBLIC_URL + '/img/error.jpg'} alt='error' className="random-block"></img> */}
-            <img src={img404} alt='error'></img>
-            <span>Персонаж не найден (error 404)</span>
+            {showErrorFatal}
+            {showError404}
         </ErrorBlock>
+    )
+}
+
+const ErrorFatal = () => {
+    return (
+        <>
+        <img src={imgFatal} alt='FatalError'></img>
+        <span>Что-то пошло не так</span>
+        </>
+    )
+}
+const Error404 = () => {
+    return (
+        <>
+        <img src={img404} alt='Error'></img>
+        <span>Персонаж не найден (error 404)</span>
+        </>
     )
 }
 
