@@ -8,7 +8,7 @@ const ImageBlock = styled.div`
     width: 100%;
     text-align: center;
     img {
-        max-height: 300px;
+        max-height: 270px;
         max-width: 100%;
     }
     span {
@@ -22,7 +22,6 @@ const ImageBlock = styled.div`
 `
 
 const BookImage = ({itemId}) => {
-    console.log(itemId);
     return (
         <ImageBlock>
             <img src={bookImage} alt='Book'></img>

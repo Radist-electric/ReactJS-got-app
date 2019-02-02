@@ -43,3 +43,6 @@ a:active {
     text-align: center;
     font-size: 26px;
 }
+.row {
+    margin-bottom: 20px;
+}
