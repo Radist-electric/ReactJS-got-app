@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Col, Row, Button} from 'reactstrap';
 import styled from 'styled-components';
 import GotService from '../../services/gotService';
 import Spinner from '../spinner';
@@ -13,18 +14,19 @@ const RandomBlock = styled.div`
         text-align: center;
     }
 `
-export default class RandomChar extends Component {
+export default class RandomItem extends Component {
     gotService = new GotService();
     state = {
         char: {},
+        switchRandomItem: true,
         loading: true,
         error: false,
         fatalError: false
     }
     
     componentDidMount() {
-        this.updateChar();
-        this.timerId = setInterval(this.updateChar, 5000);
+        this.updateItem();
+        this.timerId = setInterval(this.updateItem, 5000);
     }
     componentWillUnmount() {
         clearInterval(this.timerId);
@@ -49,13 +51,16 @@ export default class RandomChar extends Component {
         clearInterval(this.timerId);
     }
 
-    updateChar = () => {
+    updateItem = () => {
         // const id = 150000;
         const id = Math.floor(Math.random()*140+25);
         this.gotService.getCharacter(id)
             .then(this.onCharLoaded)
             .catch(this.onError);
     }
+    toggleRandomItem = () => {
+        this.setState({switchRandomItem : !this.state.switchRandomItem})
+   }
 
     render() {
         if(this.state.fatalError) {
@@ -65,13 +70,26 @@ export default class RandomChar extends Component {
         const content = !(loading || error) ? <View char={char}/> : null;
         const spinner = loading ? <Spinner/> : null;
         const errorMessage = error ? <ErrorMessage typeError="404"/> : null;
-
-        return (
+        const showrandomItem = this.state.switchRandomItem ?
             <RandomBlock className="rounded">
                 {errorMessage}
                 {content}
                 {spinner}
-            </RandomBlock>
+            </RandomBlock> : null;
+        return (
+            <Row>
+            <Col lg={{size: 6, offset: 0}}>
+                {showrandomItem}
+            </Col>
+            <Col lg={{size: 5}}>
+                <Button
+                    outline
+                    color="secondary"
+                    onClick={this.toggleRandomItem}
+                    style={{ marginBottom: '300px' }}
+                >Remove character</Button>
+            </Col>
+        </Row>
         );
     }
 }

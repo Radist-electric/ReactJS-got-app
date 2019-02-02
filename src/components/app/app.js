@@ -1,13 +1,9 @@
 import React, {Component} from 'react';
-import {Col, Row, Container, Button} from 'reactstrap';
+import {Container} from 'reactstrap';
 import Header from '../header';
-import RandomChar from '../randomChar';
+import RandomItem from '../randomItems';
 import ErrorMessage from '../errorMessage';
-import CharactersPage from '../pages/сharactersPage';
-import BooksPage from '../pages/booksPage';
-import HousesPage from '../pages/housesPage';
-// import ItemList from '../itemList';
-// import ItemDetails from '../itemDetails';
+import {CharactersPage, BooksPage, HousesPage} from '../pages';
 import GotService from '../../services/gotService';
 
 
@@ -15,7 +11,6 @@ import GotService from '../../services/gotService';
 export default class App extends Component {
     gotService = new GotService();
     state = {
-        switchRandomChar: true,
         fatalError: false
     }
     componentDidCatch() {
@@ -23,17 +18,8 @@ export default class App extends Component {
             fatalError: true
         })
     }
-    toggleRandomChar = () => {
-         this.setState({switchRandomChar : !this.state.switchRandomChar})
-    }
-    onItemSelected = (id) => {
-        this.setState({
-            selectedChar: id
-        })
-    }
-    
+
     render() {
-        const showrandomChar = this.state.switchRandomChar ? <RandomChar/> : null;
         if(this.state.fatalError) {
             return <ErrorMessage typeError="fatal"/>
         }
@@ -43,19 +29,7 @@ export default class App extends Component {
                     <Header />
                 </Container>
                 <Container>
-                    <Row>
-                        <Col lg={{size: 6, offset: 0}}>
-                            {showrandomChar}
-                        </Col>
-                        <Col lg={{size: 5}}>
-                            <Button
-                                outline
-                                color="secondary"
-                                onClick={this.toggleRandomChar}
-                                style={{ marginBottom: '300px' }}
-                            >Remove character</Button>
-                        </Col>
-                    </Row>
+                    <RandomItem/>
                     <CharactersPage/>
                     <BooksPage/>
                     <HousesPage/>
