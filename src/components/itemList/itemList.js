@@ -1,39 +1,49 @@
 import React, {Component} from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
-import GotService from '../../services/gotService';
 import Spinner from '../spinner';
+import ErrorMessage from '../errorMessage';
+
 export default class ItemList extends Component {
-    gotService = new GotService();
     state = {
-        charList: null
+        itemList: null,
+        fatalError: false
     }
     componentDidMount() {
-         this.gotService.getAllCharacters()
-            .then((charList) => {
+        const {getData} = this.props;
+         getData()
+            .then((itemList) => {
                 this.setState({
-                    charList
+                    itemList
                 })
             })
-            // this.foo.bar = 0;
     }
-    renderItems(arr) {
+    componentDidCatch() {
+        this.setState({
+            fatalError: true
+        })
+    }
+     renderItems(arr) {
         return arr.map((item) => {
-            let id = item.url.join('');
+            const id = item.url.join('');
+            const label = this.props.renderItem(item);
+            // this.foo.bar = 0;
             return (
                 <ListGroupItem
                 key={id}
-                onClick={() => this.props.onCharSelected(id)}
+                onClick={() => this.props.onItemSelected(id)}
                 >
-                    {item.name}
+                    {label}
                 </ListGroupItem>
-                
-            )
+             )
         })
     }
 
     render() {
-        const {charList} = this.state;
-        if(!charList) {
+        if(this.state.fatalError) {
+            return <ErrorMessage typeError="fatal"/>
+        }
+        const {itemList} = this.state;
+        if(!itemList) {
             return (
                 <ListGroup>
                     <ListGroupItem>
@@ -42,7 +52,7 @@ export default class ItemList extends Component {
                 </ListGroup>
             ) 
         }
-        const items = this.renderItems(charList);
+        const items = this.renderItems(itemList);
         return (
             <ListGroup>
                 {items}

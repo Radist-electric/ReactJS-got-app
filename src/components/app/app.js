@@ -3,11 +3,17 @@ import {Col, Row, Container, Button} from 'reactstrap';
 import Header from '../header';
 import RandomChar from '../randomChar';
 import ErrorMessage from '../errorMessage';
-import CharacterPage from '../characterPage';
+import CharactersPage from '../pages/сharactersPage';
+import BooksPage from '../pages/booksPage';
+import HousesPage from '../pages/housesPage';
+// import ItemList from '../itemList';
+// import ItemDetails from '../itemDetails';
+import GotService from '../../services/gotService';
 
 
 
 export default class App extends Component {
+    gotService = new GotService();
     state = {
         switchRandomChar: true,
         fatalError: false
@@ -20,7 +26,7 @@ export default class App extends Component {
     toggleRandomChar = () => {
          this.setState({switchRandomChar : !this.state.switchRandomChar})
     }
-    onCharSelected = (id) => {
+    onItemSelected = (id) => {
         this.setState({
             selectedChar: id
         })
@@ -50,7 +56,9 @@ export default class App extends Component {
                             >Remove character</Button>
                         </Col>
                     </Row>
-                    <CharacterPage/>
+                    <CharactersPage/>
+                    <BooksPage/>
+                    <HousesPage/>
                 </Container>
             </>
         );
