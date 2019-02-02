@@ -58,12 +58,14 @@ export default class GotService {
             name = (book.name.length === 0) ? 'Unnamed' : book.name,
             numberOfPages = (book.numberOfPages.length === 0) ? 'About 500' : book.numberOfPages,
             publisher = (book.publisher.length === 0) ? 'Bookcraft' : book.publisher,
+            country = (book.country.length === 0) ? 'Fairy lands' : book.country,
             released = (book.released.length === 0) ? '2019-01-28' : book.released;
       return {
         url: url,
         name: name,
         numberOfPages: numberOfPages,
         publisher: publisher,
+        country: country,
         released: released
       }
     }

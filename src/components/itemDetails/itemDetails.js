@@ -75,15 +75,15 @@ export default class ItemDetails extends Component {
         if(this.state.fatalError) {
             return <ErrorMessage typeError="fatal"/>
         }
-        if(!this.state.item) {
+        if(!this.state.item && this.props.typeOfItem !== 'book') {
             return (
                 <DetailsBlock className="rounded">
-                    <SelectItem>Пожалуйста, выберите персонажа.</SelectItem>
+                    <SelectItem>Please, select a character</SelectItem>
                 </DetailsBlock>
             )
         }
         const { item, loading } = this.state;
-        if(loading) {
+        if(loading || (!this.state.item && this.props.typeOfItem === 'book')) {
             return (
                 <DetailsBlock className="rounded">
                     <Spinner/>

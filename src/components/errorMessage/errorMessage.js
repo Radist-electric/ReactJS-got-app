@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import './errorMessage.css';
 import img404 from './error404.png';
 import imgFatal from './errorFatal.jpg';
 
@@ -40,7 +39,7 @@ const ErrorFatal = () => {
     return (
         <>
         <img src={imgFatal} alt='FatalError'></img>
-        <span>Что-то пошло не так</span>
+        <span>Something's going wrong</span>
         </>
     )
 }
@@ -48,7 +47,7 @@ const Error404 = () => {
     return (
         <>
         <img src={img404} alt='Error'></img>
-        <span>Персонаж не найден (error 404)</span>
+        <span>Server couldn't find what was requested (error 404)</span>
         </>
     )
 }
