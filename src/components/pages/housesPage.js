@@ -36,6 +36,7 @@ export default class HousesPage extends  Component {
         )
         const bookDetails = (
             <ItemDetails
+                typeOfItem ='house'
                 itemId={this.state.selectedHouse}
                 getData={this.gotService.getHouse}>
                 <Field field='url' label='URL'/>

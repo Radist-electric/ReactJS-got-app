@@ -77,7 +77,7 @@ export default class RandomItem extends Component {
                 {content}
                 {spinner}
             </RandomBlock> : null;
-        let buttonText = showrandomItem ? 'Remove character' : 'Show character';
+        let buttonText = this.state.switchRandomItem ? 'Remove character' : 'Show character';
         return (
             <Row>
                 <Col lg={{size: 6, offset: 0}}>

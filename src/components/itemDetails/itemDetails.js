@@ -78,7 +78,7 @@ export default class ItemDetails extends Component {
         if(!this.state.item && this.props.typeOfItem !== 'book') {
             return (
                 <DetailsBlock className="rounded">
-                    <SelectItem>Please, select a character</SelectItem>
+                    <SelectItem>Please, select a {this.props.typeOfItem} from the list</SelectItem>
                 </DetailsBlock>
             )
         }
