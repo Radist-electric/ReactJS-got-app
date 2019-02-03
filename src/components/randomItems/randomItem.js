@@ -43,10 +43,11 @@ export default class RandomItem extends Component {
         })
     }
 
-    onError = (err) => {
+    onError = (error) => {
         this.setState({
             error: true,
-            loading: false
+            loading: false,
+            typeError: error.message
         });
         clearInterval(this.timerId);
     }
@@ -66,30 +67,31 @@ export default class RandomItem extends Component {
         if(this.state.fatalError) {
             return <ErrorMessage typeError="fatal"/>
         }
-        const { char, loading, error } = this.state;
+        const { char, loading, error, typeError } = this.state;
         const content = !(loading || error) ? <View char={char}/> : null;
         const spinner = loading ? <Spinner/> : null;
-        const errorMessage = error ? <ErrorMessage typeError="404"/> : null;
+        const errorMessage = error ? <ErrorMessage typeError={typeError}/> : null;
         const showrandomItem = this.state.switchRandomItem ?
             <RandomBlock className="rounded">
                 {errorMessage}
                 {content}
                 {spinner}
             </RandomBlock> : null;
+        let buttonText = showrandomItem ? 'Remove character' : 'Show character';
         return (
             <Row>
-            <Col lg={{size: 6, offset: 0}}>
-                {showrandomItem}
-            </Col>
-            <Col lg={{size: 5}}>
-                <Button
-                    outline
-                    color="secondary"
-                    onClick={this.toggleRandomItem}
-                    style={{ marginBottom: '300px' }}
-                >Remove character</Button>
-            </Col>
-        </Row>
+                <Col lg={{size: 6, offset: 0}}>
+                    {showrandomItem}
+                </Col>
+                <Col lg={{size: 5}}>
+                    <Button
+                        outline
+                        color="secondary"
+                        onClick={this.toggleRandomItem}
+                        style={{ marginBottom: '300px' }}
+                    >{buttonText}</Button>
+                </Col>
+            </Row>
         );
     }
 }
