@@ -1,0 +1,440 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <RandomItem/> Testing snap & state RandomItem has rendered correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RandomItem />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <Col
+          lg={
+            Object {
+              "offset": 0,
+              "size": 6,
+            }
+          }
+          tag="div"
+          widths={
+            Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ]
+          }
+        >
+          <ForwardRef
+            className="rounded"
+          >
+            <Spinner />
+          </ForwardRef>
+        </Col>,
+        <Col
+          lg={
+            Object {
+              "size": 5,
+            }
+          }
+          tag="div"
+          widths={
+            Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ]
+          }
+        >
+          <Button
+            color="secondary"
+            onClick={[Function]}
+            outline={true}
+            style={
+              Object {
+                "marginBottom": "300px",
+              }
+            }
+            tag="button"
+          >
+            Remove character
+          </Button>
+        </Col>,
+      ],
+      "tag": "div",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <ForwardRef
+            className="rounded"
+          >
+            <Spinner />
+          </ForwardRef>,
+          "lg": Object {
+            "offset": 0,
+            "size": 6,
+          },
+          "tag": "div",
+          "widths": Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              null,
+              null,
+              <Spinner />,
+            ],
+            "className": "rounded",
+          },
+          "ref": null,
+          "rendered": Array [
+            null,
+            null,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bwzfXH",
+              "isStatic": true,
+              "rules": Array [
+                "
+    padding: 25px 25px 15px 25px;
+    margin-bottom: 40px;
+    background-color: #fff;
+    h4 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bwzfXH",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <Button
+            color="secondary"
+            onClick={[Function]}
+            outline={true}
+            style={
+              Object {
+                "marginBottom": "300px",
+              }
+            }
+            tag="button"
+          >
+            Remove character
+          </Button>,
+          "lg": Object {
+            "size": 5,
+          },
+          "tag": "div",
+          "widths": Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Remove character",
+            "color": "secondary",
+            "onClick": [Function],
+            "outline": true,
+            "style": Object {
+              "marginBottom": "300px",
+            },
+            "tag": "button",
+          },
+          "ref": null,
+          "rendered": "Remove character",
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <Col
+            lg={
+              Object {
+                "offset": 0,
+                "size": 6,
+              }
+            }
+            tag="div"
+            widths={
+              Array [
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+              ]
+            }
+          >
+            <ForwardRef
+              className="rounded"
+            >
+              <Spinner />
+            </ForwardRef>
+          </Col>,
+          <Col
+            lg={
+              Object {
+                "size": 5,
+              }
+            }
+            tag="div"
+            widths={
+              Array [
+                "xs",
+                "sm",
+                "md",
+                "lg",
+                "xl",
+              ]
+            }
+          >
+            <Button
+              color="secondary"
+              onClick={[Function]}
+              outline={true}
+              style={
+                Object {
+                  "marginBottom": "300px",
+                }
+              }
+              tag="button"
+            >
+              Remove character
+            </Button>
+          </Col>,
+        ],
+        "tag": "div",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <ForwardRef
+              className="rounded"
+            >
+              <Spinner />
+            </ForwardRef>,
+            "lg": Object {
+              "offset": 0,
+              "size": 6,
+            },
+            "tag": "div",
+            "widths": Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                null,
+                null,
+                <Spinner />,
+              ],
+              "className": "rounded",
+            },
+            "ref": null,
+            "rendered": Array [
+              null,
+              null,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": Array [],
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bwzfXH",
+                "isStatic": true,
+                "rules": Array [
+                  "
+    padding: 25px 25px 15px 25px;
+    margin-bottom: 40px;
+    background-color: #fff;
+    h4 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+",
+                ],
+              },
+              "displayName": "styled.div",
+              "foldedComponentIds": Array [],
+              "render": [Function],
+              "styledComponentId": "sc-bwzfXH",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": <Button
+              color="secondary"
+              onClick={[Function]}
+              outline={true}
+              style={
+                Object {
+                  "marginBottom": "300px",
+                }
+              }
+              tag="button"
+            >
+              Remove character
+            </Button>,
+            "lg": Object {
+              "size": 5,
+            },
+            "tag": "div",
+            "widths": Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Remove character",
+              "color": "secondary",
+              "onClick": [Function],
+              "outline": true,
+              "style": Object {
+                "marginBottom": "300px",
+              },
+              "tag": "button",
+            },
+            "ref": null,
+            "rendered": "Remove character",
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

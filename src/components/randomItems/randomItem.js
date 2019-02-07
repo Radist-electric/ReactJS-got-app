@@ -21,7 +21,8 @@ export default class RandomItem extends Component {
         switchRandomItem: true,
         loading: true,
         error: false,
-        fatalError: false
+        fatalError: false,
+        typeError: ''
     }
     
     componentDidMount() {
@@ -43,11 +44,11 @@ export default class RandomItem extends Component {
         })
     }
 
-    onError = (error) => {
+    onError = (err) => {
         this.setState({
             error: true,
             loading: false,
-            typeError: error.message
+            typeError: err.message
         });
         clearInterval(this.timerId);
     }

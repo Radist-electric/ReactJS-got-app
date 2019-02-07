@@ -67,32 +67,3 @@ export default class  ErrorMessage extends Component {
     }
 }
 
-
-// const ErrorMessage = ({typeError}) => {
-//     const showErrorFatal = (typeError ==="fatal") ? <ErrorFatal/> : null;
-//     const showError404 = (typeError ==="404") ? <Error404/> : null;
-//     return (
-//         <ErrorBlock>
-//             {showErrorFatal}
-//             {showError404}
-//         </ErrorBlock>
-//     )
-// }
-// const ErrorFatal = () => {
-//     return (
-//         <>
-//         <img src={imgFatal} alt='FatalError'></img>
-//         <span>Something's going wrong</span>
-//         </>
-//     )
-// }
-// const Error404 = () => {
-//     return (
-//         <>
-//         <img src={img404} alt='Error'></img>
-//         <span>Server couldn't find what was requested (error 404)</span>
-//         </>
-//     )
-// }
-
-// export default ErrorMessage;
